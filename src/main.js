@@ -258,7 +258,7 @@ app.get('/api/randoms', routes.getRandoms);
 
 //--------------------------------------------
 // Connect to DB
-const PORT = args.PORT;
+const PORT = process.env.PORT | args.PORT;
 controllersdb.conectarDB(config.URL_BASE_DE_DATOS, (err) => {
   if (err) {
     loggerError.error(err);
